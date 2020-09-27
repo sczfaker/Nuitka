@@ -349,7 +349,7 @@ class ShapeTypeNoneType(ShapeBase):
 
     @staticmethod
     def hasShapeSlotBool():
-        return False
+        return True
 
     @staticmethod
     def hasShapeSlotAbs():
