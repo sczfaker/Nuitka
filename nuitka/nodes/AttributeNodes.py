@@ -92,7 +92,8 @@ class StatementAssignmentAttribute(StatementChildrenHavingBase):
             trace_collection=trace_collection,
         )
 
-    def getStatementNiceName(self):
+    @staticmethod
+    def getStatementNiceName():
         return "attribute assignment statement"
 
 
@@ -140,7 +141,8 @@ class StatementDelAttribute(StatementChildHavingBase):
             trace_collection=trace_collection,
         )
 
-    def getStatementNiceName(self):
+    @staticmethod
+    def getStatementNiceName():
         return "attribute del statement"
 
 
@@ -183,7 +185,8 @@ class ExpressionAttributeLookup(ExpressionChildHavingBase):
             exception_type=exception_type, attribute_name=self.getAttributeName()
         )
 
-    def isKnownToBeIterable(self, count):
+    @staticmethod
+    def isKnownToBeIterable(count):
         # TODO: Could be known. We would need for computeExpressionAttribute to
         # either return a new node, or a decision maker.
         return None
@@ -396,7 +399,8 @@ class ExpressionAttributeCheck(ExpressionChildHavingBase):
 
         return self, None, None
 
-    def mayRaiseException(self, exception_type):
+    @staticmethod
+    def mayRaiseException(exception_type):
         return False
 
     def getAttributeName(self):
